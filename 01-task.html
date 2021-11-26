@@ -83,9 +83,51 @@
             }
         }
 
+        let greenSquare;
+        let startWasPress = false;
+        let stopWasPress = false;
+        let increaseWasPress = false;
+        let decreaseWasPress = false;
+
+
+        let timeOut = 40;
         document.querySelector("#startBtn").addEventListener("click", function () {
-            setInterval(move, 40);
+            if (!startWasPress) {
+                startWasPress = true;
+                console.log(timeOut);
+                greenSquare = setInterval(move, timeOut);
+
+            }
         });
+
+        document.querySelector("#stopBtn").addEventListener("click", function () {
+            clearInterval(greenSquare);
+            startWasPress = false;
+            timeOut = 40;
+        })
+
+
+        document.querySelector("#increaseBtn").addEventListener("click", function () {
+            if (startWasPress) {
+                clearInterval(greenSquare);
+                timeOut = timeOut / 2;
+                console.log(timeOut);
+                greenSquare = setInterval(move, timeOut);
+            }
+        })
+
+        document.querySelector("#decreaseBtn").addEventListener("click", function () {
+            if (startWasPress) {
+                clearInterval(greenSquare);
+                timeOut = timeOut * 2;
+                console.log(timeOut);
+                greenSquare = setInterval(move, timeOut);
+            }
+        })
+
+
+
+
     </script>
 </body>
 
