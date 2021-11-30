@@ -31,6 +31,41 @@
         Пользователь: 56
         Сценарий: Правильно! Загаданное значение 56. Вы угадали с 4й попытки за 10 сек.
         */
+        let randomValue = Math.floor(Math.random() * 101);
+        console.log(randomValue);
+
+        let startTime = Date.now();
+
+        let guess = false;
+        let number = +prompt("я загадал случайное значение от 0 до 100");
+        let count = 1;
+        while (!guess) {
+            if (number == randomValue) {
+                guess = true;
+                congratulation();
+            } else {
+                number = +prompt(`${checkMoreOrLess(number)}`);
+                count++;
+            }
+        }
+
+        function checkMoreOrLess(number) {
+            let value;
+            if (number > randomValue) {
+                value = "меньше";
+            } else if (number < randomValue) {
+                value = "больше";
+            }
+            return `я загадал значение ${value}, чем ${number}`;
+        }
+
+        function congratulation() {
+            guess = true;
+            let endTime = Date.now();
+            let time = Math.floor((endTime - startTime) / 1000);
+            alert(`Правильно! Загаданное значение ${randomValue}. Вы угадали с ${count}й попытки за ${time} сек.`);
+        }
+
     </script>
 </body>
 
