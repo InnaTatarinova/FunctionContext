@@ -10,13 +10,6 @@
 
 <body>
     <script>
-        /*
-        Задание:
-        Создайте функцию showWithDelay(массив);
-        Метод принимает массив и на консоль по очереди выводит каждый элемент массива с интервалом в одну секунду
-        Сделайте два варианта с setInterval и setTimeout
-        */
-
         function showWithDelay(arr) {
             for (let i = 0; i < arr.length; i++) {
                 setTimeout(function () {
@@ -46,7 +39,6 @@
                 if (i > arr.length - 1) {
                     clearInterval(item);
                 }
-
             }, 1000);
         };
 
@@ -54,12 +46,9 @@
         let arr = [10, 20, 30, 40];
         
         showWithDelay(arr);
-        
         showWithDelay2(arr);
-
         showWithDelayInterval(arr);
 
     </script>
 </body>
-
 </html>
