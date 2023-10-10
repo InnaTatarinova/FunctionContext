@@ -28,10 +28,10 @@
 </head>
 
 <body>
-    <button id="startBtn">Старт</button>
-    <button id="stopBtn">Стоп</button>
-    <button id="increaseBtn">Ускорить</button>
-    <button id="decreaseBtn">Замедлить</button>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <button id="increaseBtn">Increase</button>
+    <button id="decreaseBtn">Decrease</button>
 
     <div id="container">
         <div id="element"></div>
@@ -39,14 +39,13 @@
 
     <script>
         /*
-        Задание:
-
-        Доработайте сценарий. 
-        - При нажатии на кнопку стоп, анимация должна остановиться.
-        - При нажатии на кнопку ускорить, анимация должна ускориться, при повторных нажатиях скорость анимации
-          должна увеличиваться. 
-        - При нажатии на кнопку "Замедлить" - анимация замедляется, при повторных нажатиях скорость становится
-          меньше.
+        Task:
+          Finalize the script.
+          - When you click on the stop button, the animation should stop.
+          - When you press the accelerate button, the animation should speed up, when you press it again, the speed of the animation
+            should increase.
+          - When you click on the "Slow down" button, the animation slows down, when you press it again, the speed becomes
+            less.
         */
 
         let element = document.querySelector("#element");
@@ -96,7 +95,6 @@
                 startWasPress = true;
                 console.log(timeOut);
                 greenSquare = setInterval(move, timeOut);
-
             }
         });
 
@@ -124,9 +122,6 @@
                 greenSquare = setInterval(move, timeOut);
             }
         })
-
-
-
 
     </script>
 </body>
