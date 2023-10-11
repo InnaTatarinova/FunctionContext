@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 05</title>
+</head>
+
+<body>
+    <script>
+        let randomValue = Math.floor(Math.random() * 101);
+        console.log(randomValue);
+
+        let startTime = Date.now();
+
+        let guess = false;
+        let number = +prompt("I guessed a random number from 0 to 100");
+        let count = 1;
+        while (!guess) {
+            if (number == randomValue) {
+                guess = true;
+                congratulation();
+            } else {
+                number = +prompt(`${checkMoreOrLess(number)}`);
+                count++;
+            }
+        }
+
+        function checkMoreOrLess(number) {
+            let value;
+            if (number > randomValue) {
+                value = "less";
+            } else if (number < randomValue) {
+                value = "more";
+            }
+            return `Number is ${value}, than ${number}`;
+        }
+
+        function congratulation() {
+            guess = true;
+            let endTime = Date.now();
+            let time = Math.floor((endTime - startTime) / 1000);
+            alert(`Yes, you are right! Number is ${randomValue}. You did it on ${count}th try for ${time} sec.`);
+        }
+
+    </script>
+</body>
+
+</html>
