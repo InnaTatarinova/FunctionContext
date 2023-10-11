@@ -67,14 +67,14 @@
 <body>
     <div class="input-panel">
         <input type="text" id="task-name-input">
-        <button id="add-task-btn">Добавить задачу</button>
+        <button id="add-task-btn">Add task</button>
     </div>
     <div class="input-panel">
-        <button id="show-all-btn">Все</button>
-        <button id="show-not-completed-btn">Не завершенные</button>
+        <button id="show-all-btn">All tasks</button>
+        <button id="show-not-completed-btn">Unfinished tasks</button>
     </div>
     <div class="task-list">
-        <p id="start-message">Нет новых задач</p>
+        <p id="start-message">There is not any task</p>
     </div>
 
     <script>
@@ -105,7 +105,7 @@
 
                 taskNameInput.value = "";
             } else {
-                alert("введите имя задачи");
+                alert("You need type a task");
             }
         }
 
